@@ -94,6 +94,7 @@ gulp.task("es6", function () {
 
 gulp.task('img', function() {
     return gulp.src('src/i/**/*')
+        .pipe(wait(1000))
         .pipe(gulp.dest('build/i'));
 });
 
