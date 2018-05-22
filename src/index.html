@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('partials/head.html')
+<body>
+    <script>
+        document.body.className += ' js';
+    </script>
+    <div class="page-wrap index-page-wrap">
+        @@include('partials/header.html', { "headerClass": "index-page-header", "headerImgClass": "index-page-header-img", "pageTitle": "Заголовок"})
+        <div class="l-afisha">
+            <div class="afisha-row">
+                <div class="afisha-main">
+                    @@include('partials/afisha-filter.html', {"title": "Афиша"})
+                    @@include('partials/afisha-card-list.html')
+                </div>
+                <div class="afisha-aside">
+                    <div class="afisha-aside-in">
+                        <div class="afisha-aside-header">
+                            <div class="b-title b-title--wide">Бизнесу</div>
+                        </div>
+
+                        <div class="pub-list">
+                            <a href="#" class="pub-item">
+                                <span class="pub-title">Готовь сани с&nbsp;лета&nbsp;– Корпоративные ёлки</span>
+                                <span class="pub-date">18 мая 2018</span>
+                                <span class="pub-img"><img src="./userimg/pub-01.jpg" alt=""></span>
+                            </a>
+                            <a href="#" class="pub-item">
+                                <span class="pub-title">Готовь сани с&nbsp;лета&nbsp;– Корпоративные ёлки</span>
+                                <span class="pub-date">18 мая 2018</span>
+                                <span class="pub-img"><img src="./userimg/pub-02.jpg" alt=""></span>
+                            </a>
+                            <a href="#" class="pub-item">
+                                <span class="pub-title">Готовь сани с&nbsp;лета&nbsp;– Корпоративные ёлки</span>
+                                <span class="pub-date">18 мая 2018</span>
+                                <span class="pub-img"><img src="./userimg/pub-03.jpg" alt=""></span>
+                            </a>
+                            <a href="#" class="pub-item">
+                                <span class="pub-title">Готовь сани с&nbsp;лета&nbsp;– Корпоративные ёлки</span>
+                                <span class="pub-date">18 мая 2018</span>
+                                <span class="pub-img"><img src="./userimg/pub-04.jpg" alt=""></span>
+                            </a>
+                            <a href="#" class="pub-item">
+                                <span class="pub-title">Готовь сани с&nbsp;лета&nbsp;– Корпоративные ёлки</span>
+                                <span class="pub-date">18 мая 2018</span>
+                                <span class="pub-img"><img src="./userimg/pub-05.jpg" alt=""></span>
+                            </a>
+                        </div>
+
+                        <div class="afisha-aside-footer">
+                            <a href="#" class="button button--wide">Все предложения</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @@include('partials/footer.html', { "footerClass": "index-page-footer"})
+    @@include('partials/scripts.html')
+</body>
+</html>

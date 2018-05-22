@@ -1,0 +1,117 @@
+@media only screen and (max-width: 1279px) {
+    .hide-1280 {
+        display: none!important;
+    }
+
+    .card-list-col  {
+        max-width: 33.33%;
+    }
+
+    .card-list-col-5 {
+        max-width: 25%;
+    }
+
+    .header-aside:last-child {
+        display: none;
+    }
+
+    .header-menu-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+
+        > li {
+            display: flex;
+            flex: 1 1 calc(100% / 3);
+
+            @for $i from 1 through 4 {
+                &:nth-child(#{$i}) {
+                  flex: 1 1 calc(100% / 4);
+                  border-right: 1px solid rgba(#fff, 0.35);
+                }
+            }
+        }
+    }
+
+    .index-page-header-img {
+        transition: margin 0.75s ease-out;
+        margin-left: 200px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+    .show-1024 {
+        display: block!important;
+    }
+}
+
+@media only screen and (max-width: 1023px), (max-device-width: 1024px) and (orientation: landscape) {
+    .hide-1024 {
+        display: none!important;
+    }
+
+    .card-list-col  {
+        max-width: 50%;
+    }
+    
+
+    .afisha-main {
+        flex: 2;
+    }
+
+    .afisha-aside {
+        flex: 1;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .show-768 {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .hide-768 {
+        display: none !important;
+    }
+
+    .card-list-col  {
+        max-width: 50%;
+    }
+
+    .afisha-row {
+        flex-direction: column;
+    }
+
+    .afisha-main {
+        flex: 1;
+    }
+
+    .afisha-aside {
+        flex: 1;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .show-640 {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .hide-640 {
+        display: none !important;
+    }
+
+    .card-list-col  {
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .hide-480 {
+        display: none !important;
+    }
+}
