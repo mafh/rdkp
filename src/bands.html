@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="ru">
+    @@include('partials/head.html')
+<body>
+    <script>
+        document.body.className += ' js';
+    </script>
+    <div class="page-wrap">
+        @@include('partials/header.html', {"image":"./userimg/bg-title-2.jpg", "pageTitle": "Коллективы"})
+
+        <div class="backnav wrap">
+            <a href="/">Главная</a><span>Коллективы</span>
+        </div>
+
+        <div class="l-layout">
+            <aside class="l-aside">
+                <div class="aside-in wrap">
+                    <ul class="sidemenu js-sidemenu">
+                        <li><a href="#">Народный ансамбль танца «Радуга»</a></li>
+                        <li><a href="#">Заслуженный любительский коллектив Республики Беларусь ансамбль танца «Ровесник»</a></li>
+                        <li><a href="#">Народный театр «ЭХО»</a></li>
+                        <li><a href="#">Заслуженный любительский коллектив Республики Беларусь «Хоровая капелла»</a></li>
+                        <li><a href="#">Народная вокальная студия</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="l-section">
+                <section class="wrap">
+
+                    <div class="bands-list">
+                        <div class="band">
+                            <div class="band-img">
+                                <img data-src="./userimg/band-01.jpg" class="lozad" alt="">
+                            </div>
+                            <div class="band-details">
+                                <div class="band-title"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, accusantium!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minima, cumque iusto maxime nobis assumenda!</p>
+                                <p><a href="#" class="button"><span>Подробнее</span><span class="hide-480"> о коллективе</span></a></p>
+                            </div>
+                        </div>
+
+                        <div class="band">
+                            <div class="band-img">
+                                <img data-src="./userimg/band-02.jpg" class="lozad" alt="">
+                            </div>
+                            <div class="band-details">
+                                <div class="band-title"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, accusantium!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minima, cumque iusto maxime nobis assumenda!</p>
+                                <p><a href="#" class="button"><span>Подробнее</span><span class="hide-480"> о коллективе</span></a></p>
+                            </div>
+                        </div>
+
+                        <div class="band">
+                            <div class="band-img">
+                                <img data-src="./userimg/band-03.jpg" class="lozad" alt="">
+                            </div>
+                            <div class="band-details">
+                                <div class="band-title"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, accusantium!</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, minima, cumque iusto maxime nobis assumenda!</p>
+                                <p><a href="#" class="button"><span>Подробнее</span><span class="hide-480"> о коллективе</span></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+
+    </div>
+    @@include('partials/footer.html')
+    @@include('partials/scripts.html')
+</body>
+</html>

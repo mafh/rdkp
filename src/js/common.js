@@ -216,7 +216,11 @@ $(function headerAnimationFunction() {
     const $headerEl = $('.js-header');
     const $bg  = $headerEl.find('.js-header-bg');
     const $img = $headerEl.find('.js-header-img');
+    const $wav = $headerEl.find('.js-header-pattern-wave');
     const $gradient = $headerEl.find('.js-header-gradient');
+    const $promoSlider = $headerEl.find('.js-promo-slider');
+    const $promoNav = $('.js-promo-slider-nav');
+    const $headerInfo = $('.js-header-slider-aside');
 
     let t = new TimelineMax();
     let header = new headerAnimation()
@@ -226,6 +230,10 @@ $(function headerAnimationFunction() {
 
         this.prepare = function() {
             TweenLite.set($bg, {
+                width:'0%',
+            });
+
+            TweenLite.set($wav, {
                 width:'0%',
             });
 
@@ -240,7 +248,20 @@ $(function headerAnimationFunction() {
                 y: '50%'
             });
 
-            console.log($img);
+            TweenLite.set($promoSlider, {
+                opacity: 0,
+                y: '10%'
+            });
+
+            TweenLite.set($promoNav, {
+                opacity: 0,
+                x: '-10%'
+            });
+
+            TweenLite.set($headerInfo, {
+                opacity: 0,
+                x: '10%'
+            });
 
             $img.imagesLoaded(function(){
                 console.log('imagesLoaded');
@@ -264,15 +285,78 @@ $(function headerAnimationFunction() {
             t.add(TweenLite.to($gradient, 0.75, {
                 opacity: 1,
                 y: '0%',
-                ease: Power2.easeOut
+                ease: Power2.easeOut,
+                onStart:function() {
+                    TweenLite.to($wav, 4, {
+                        width:'100%'
+                    });
+                    TweenLite.to($promoSlider, 0.5, {
+                        opacity: 1,
+                        delay: 0.25,
+                        y: '0%',
+                        ease: Power2.easeOut,
+                    });
+                    TweenLite.to($headerInfo, 0.5, {
+                        opacity: 1,
+                        delay: 0.5,
+                        x: '0%',
+                        ease: Power2.easeOut,
+                    });
+                    TweenLite.to($promoNav, 0.5, {
+                        opacity: 1,
+                        delay: 0.75,
+                        x: '0%',
+                        ease: Power2.easeOut,
+                    });
+                }
             }));
 
         }
     }
 
-    header.prepare();
+    // header.prepare();
 });
+
+
 
 const stickybitsInstance = stickybits('.js-sidemenu', {
     stickyBitStickyOffset: 40
+});
+
+
+var promoSlider = new Swiper('.js-promo-slider', {
+    direction: 'horizontal',
+    speed: 1000,
+    effect: 'slide',
+    slidesPerView: 1,
+    parallax:true,
+    pagination: false,
+    navigation: false,
+    scrollbar: false,
+    resistance: false,
+    loop: false,
+    lazy: {
+        loadPrevNext: true,
+    }
+});
+
+var promoSliderNav = new Swiper('.js-promo-slider-nav', {
+    slidesPerView: 6,
+    loop: false,
+    slideToClickedSlide: true,
+    centeredSlides: true,
+    speed: 1000,
+    lazy: true,
+
+    navigation: {
+        nextEl: '.promo-button-next',
+        prevEl: '.promo-button-prev',
+    }
+});
+
+$(function(){
+    if ($('.js-promo-slider').length > 0) {
+        promoSlider.controller.control = promoSliderNav;
+        promoSliderNav.controller.control = promoSlider;
+    }
 });

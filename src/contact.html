@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('partials/head.html')
+<body>
+    <script>
+        document.body.className += ' js';
+    </script>
+    <div class="page-wrap">
+        @@include('partials/header.html', {"image":"./userimg/bg-title-2.jpg", "pageTitle": "Контакты"})
+
+        <div class="backnav wrap">
+            <a href="/">Главная</a><span>Контакты</span>
+        </div>
+
+        <div class="l-layout usercontent">
+
+            <div class="wrap">
+                <p>{text 5 cols}</p>
+                <p>{socials full}</p>
+            </div>
+
+            <div class="contact-map">
+                {contact-map}
+            </div>
+
+            <div class="wrap">
+                {Администрация}
+            </div>
+
+            <div class="b-contact">
+                <div class="wrap">
+                    {contact-form}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    @@include('partials/footer.html')
+    @@include('partials/scripts.html')
+</body>
+</html>

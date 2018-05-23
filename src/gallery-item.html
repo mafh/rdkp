@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('partials/head.html')
+<body>
+    <script>
+        document.body.className += ' js';
+    </script>
+    <div class="page-wrap">
+        @@include('partials/header.html', {"image":"./userimg/bg-title-3.jpg", "pageTitle": "Галерея"})
+
+        <div class="backnav wrap">
+            <a href="/">Главная</a><a href="/">Галерея</a><span>На проспекте Независимости начали высаживать взрослые деревья</span>
+        </div>
+
+        <div class="l-layout">
+            <div class="wrap">
+                <h3 class="color--gold">На проспекте Независимости начали высаживать взрослые деревья</h3>
+
+                <p>{gallery}</p>
+
+                <div class="flex-row">
+                    <div class="col-xs-6">
+                        <a href="#">Вернуться к списку</a>
+                    </div>
+                    <div class="col-xs-6 end-xs">
+                        {socials}
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap">
+                <div class="b-title">
+                    Другие галереи этой серии
+                </div>
+
+                <p>{slider}</p>
+            </div>
+        </div>
+
+    </div>
+
+    @@include('partials/footer.html')
+    @@include('partials/scripts.html')
+</body>
+</html>

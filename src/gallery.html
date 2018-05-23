@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html lang="ru">
+    @@include('partials/head.html')
+<body>
+    <script>
+        document.body.className += ' js';
+    </script>
+    <div class="page-wrap">
+        @@include('partials/header.html', {"image":"./userimg/bg-title-2.jpg", "pageTitle": "Галерея"})
+
+        <div class="backnav wrap">
+            <a href="/">Главная</a><span>Галерея</span>
+        </div>
+
+        <div class="l-layout">
+            <aside class="l-aside">
+                <div class="aside-in wrap">
+                    <ul class="sidemenu js-sidemenu">
+                        <li><a href="#">Театральный зал</a></li>
+                        <li>
+                            <a href="#">Гобеленовый зал</a>
+                            <ul>
+                                <li><a href="#">Аудитория</a></li>
+                                <li class="is-active"><a href="#">Лекторий</a></li>
+                                <li><a href="#">Променад</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Белый зал</a></li>
+                        <li><a href="#">Голубая гостиная</a></li>
+                        <li><a href="#">Арт-кафе</a></li>
+                        <li><a href="#">Хореографические залы и аудитории</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="l-section">
+                <section class="wrap">
+                    
+                    <div class="gallery-list">
+                        <div class="gallery-row">
+                            <div class="gcol gcol-double">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-01.jpg" class="lozad" alt=""></span>
+                                    В майках под солнцем. Как минчане встретили первый теплый день весны
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-02.jpg" class="lozad" alt=""></span>
+                                    На проспекте Независимости начали высаживать взрослые деревья. Их будет больше сотни
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-03.jpg" class="lozad" alt=""></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, odit.
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-02.jpg" class="lozad" alt=""></span>
+                                    На проспекте Независимости начали высаживать взрослые деревья. Их будет больше сотни
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-03.jpg" class="lozad" alt=""></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, odit.
+                                </a>
+                            </div>
+                            <div class="gcol gcol-double">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-01.jpg" class="lozad" alt=""></span>
+                                    В майках под солнцем. Как минчане встретили первый теплый день весны
+                                </a>
+                            </div>
+                            <div class="gcol gcol-double">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-01.jpg" class="lozad" alt=""></span>
+                                    В майках под солнцем. Как минчане встретили первый теплый день весны
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-02.jpg" class="lozad" alt=""></span>
+                                    На проспекте Независимости начали высаживать взрослые деревья. Их будет больше сотни
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-03.jpg" class="lozad" alt=""></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, odit.
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-02.jpg" class="lozad" alt=""></span>
+                                    На проспекте Независимости начали высаживать взрослые деревья. Их будет больше сотни
+                                </a>
+                            </div>
+                            <div class="gcol">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-03.jpg" class="lozad" alt=""></span>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, odit.
+                                </a>
+                            </div>
+                            <div class="gcol gcol-double">
+                                <a href="#" class="gallery-item">
+                                    <span class="gallery-item-img"><img data-src="./userimg/gcol-01.jpg" class="lozad" alt=""></span>
+                                    В майках под солнцем. Как минчане встретили первый теплый день весны
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+        
+   
+
+    </div>
+    @@include('partials/footer.html')
+    @@include('partials/scripts.html')
+</body>
+</html>
