@@ -314,7 +314,7 @@ $(function headerAnimationFunction() {
         }
     }
 
-    // header.prepare();
+    header.prepare();
 });
 
 
@@ -324,7 +324,7 @@ const stickybitsInstance = stickybits('.js-sidemenu', {
 });
 
 
-var promoSlider = new Swiper('.js-promo-slider', {
+let promoSlider = new Swiper('.js-promo-slider', {
     direction: 'horizontal',
     speed: 1000,
     effect: 'slide',
@@ -340,7 +340,7 @@ var promoSlider = new Swiper('.js-promo-slider', {
     }
 });
 
-var promoSliderNav = new Swiper('.js-promo-slider-nav', {
+let promoSliderNav = new Swiper('.js-promo-slider-nav', {
     slidesPerView: 5,
     loop: false,
     slideToClickedSlide: true,
