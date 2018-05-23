@@ -341,7 +341,7 @@ var promoSlider = new Swiper('.js-promo-slider', {
 });
 
 var promoSliderNav = new Swiper('.js-promo-slider-nav', {
-    slidesPerView: 6,
+    slidesPerView: 5,
     loop: false,
     slideToClickedSlide: true,
     centeredSlides: true,

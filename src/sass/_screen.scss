@@ -1547,6 +1547,7 @@ h5,
 
     input {
         padding-right: 50px;
+        font-size: 16px;
     }
 }
 
@@ -2185,9 +2186,27 @@ h5,
         left: 80px;
         width: 320px;
         height: 450px;
-        object-fit: contain;
-        object-position: 0% 0%;
-        font-family: 'object-fit: contain; object-position: 0% 0%;';
+
+        &:before {
+            content:"";
+            display: block;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            // @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+            @include linear-gradient(to right, rgba(#000, 0) 0%, rgba(#000, 0.3) 50%, rgba(#000, 0.4) 100%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: 0% 0%;
+            font-family: 'object-fit: contain; object-position: 0% 0%;';
+        }
     }
 
     .promo-slide-details {
@@ -2198,6 +2217,7 @@ h5,
         box-sizing: border-box;
         padding-bottom: 80px;
         padding-left: 300px;
+        z-index: 2;
     }
 
     .promo-slide-title {
@@ -2208,7 +2228,7 @@ h5,
         max-width: 90%;
         line-height: 1;
         padding-bottom: 50px;
-        text-shadow: 1px 1px 1px rgba(#000, 0.5);
+        // text-shadow: 1px 1px 1px rgba(#000, 0.5);
     }
 
     .promo-slide-link {
@@ -2221,19 +2241,22 @@ h5,
 }
 
 .promo-slider-nav-wrap {
-    max-width: 1280px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
 .promo-slider-nav {
     &.swiper-container {
-        margin-left: 20vw;
-        background-color: lighten($darkbrown, 2.5%);
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        overflow: hidden;
     }
 
     .swiper-slide {
         height: 100px;
-        width: 180px;
+        // width: 180px;
         box-sizing: border-box;
         background-color: #000;
         cursor: pointer;
@@ -2256,14 +2279,21 @@ h5,
             @include cover;
             width: 100%;
             height: 100%;
-            opacity: 0.5;
-            transition: opacity 1s;
+            opacity: 0.3;
+            filter: saturate(0.5);
+            transition: opacity 1s, filter 1s;
         }
 
         &:hover {
             &:after {
                 opacity: 1;
-                transition: opacity 0.05s;
+                filter: saturate(1);
+                transition: opacity 0.1s;
+            }
+            img {
+                opacity: 0.6;
+                filter: saturate(0.7);
+                transition: opacity 0.1s, filter 0.1s;
             }
         }
     }
@@ -2282,21 +2312,39 @@ h5,
     background-color: $darkbrown;
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 10;
     transition: background-color 0.2s;
     cursor: pointer;
+    transition: opacity 0.3s, width 0.3s;
+    transform-origin: 50% 50%;
+
+    svg {
+        position: absolute;
+        @include middle;
+        width: 9px;
+        height: 15px;
+        fill: $gold;
+    }
 
     &:hover {
         background-color: lighten($darkbrown, 5%);
     }
+
+    &.swiper-button-disabled {
+        pointer-events: none;
+        opacity: 0;
+        width: 0;
+    }
 }
 
 .promo-button-prev {
-    left: 0;
+    left: -100px;
+    // left: 0;
 }
 
 .promo-button-next {
-    right: 0;
+    right: -100px;
+    // right: 0;
 }
 
 .gallery-list {
