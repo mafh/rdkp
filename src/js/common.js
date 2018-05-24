@@ -264,8 +264,7 @@ $(function headerAnimationFunction() {
             });
 
             $img.imagesLoaded(function(){
-                console.log('imagesLoaded');
-                setTimeout(header.show, 1000);
+                setTimeout(header.show, 100);
             });
 
         }

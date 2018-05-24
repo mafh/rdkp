@@ -999,6 +999,7 @@ h5,
     padding: 0 20px;
     position: relative;
     z-index: 10;
+    min-height: 50px;
 }
 
 .header-main {
@@ -2352,7 +2353,7 @@ h5,
         width: 100%;
         box-sizing: border-box;
         padding-bottom: 80px;
-        padding-left: 300px;
+        padding-left: 270px;
         z-index: 2;
     }
 
@@ -2598,5 +2599,33 @@ a.developer {
 
     &.is-visible {
         transform: translateX(0);
+    }
+}
+
+.sidebar-in {
+    padding: 50px 50px 50px 90px;
+    font-size: 20px;
+}
+
+.sidebar-menu {
+    a {
+        color: $brown;
+    }
+
+    li {
+        padding-bottom: 10px;
+    }
+
+    > li {
+        > a {
+            font-size: 24px;
+            font-family: $old;
+            font-weight: 700;
+        }
+    }
+    ul {
+        padding-top: 10px;
+        list-style: none;
+        padding-left: 20px;
     }
 }
