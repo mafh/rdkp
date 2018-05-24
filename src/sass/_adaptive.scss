@@ -1,3 +1,19 @@
+@media only screen and (max-width: 1299px) {
+    .promo-slider-nav {
+        &.swiper-container {
+            overflow: hidden;
+        }
+    }
+
+    .promo-button-prev {
+        left: 0;
+    }
+
+    .promo-button-next {
+        right: 0;
+    }
+}
+
 @media only screen and (max-width: 1279px) {
     .hide-1280 {
         display: none!important;
@@ -39,6 +55,16 @@
         margin-left: 200px;
     }
 
+    .promo-slider {
+        .promo-slide-title {
+            font-size: 5.63vw;
+        }
+    }
+
+    .footmenu-col {
+        max-width: 33.33%;
+    }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -64,6 +90,27 @@
     .afisha-aside {
         flex: 1;
     }
+
+    .promo-slider {
+
+        // .promo-slide-image {
+        //     left: 20px;
+        //     width: 250px;
+        //     height: 352px;
+        //     transform: translateY(-25%);
+        // }
+
+        // .promo-slide-details {
+        //     padding-left: 200px;
+        // }
+    }
+
+    // .afisha-aside-in {
+    //     max-height: 100vh;
+    //     overflow: auto;
+    //     -webkit-overflow-scrolling: auto;
+    // }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -92,6 +139,92 @@
     .afisha-aside {
         flex: 1;
     }
+
+    .pub-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .pub-col {
+        flex: 1 1 50%;
+        max-width: 50%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .header-slider-aside {
+        display: none;
+    }
+
+    .header-slider-main {
+        margin-right: 0;
+    }
+
+    .promo-slider {
+        // display: none;
+        .promo-slide-title {
+            font-size: 7vw;
+        }
+
+        .promo-slide-image {
+            left: 80px;
+            width: 320px;
+            height: 450px;
+            transform: translateY(0);
+        }
+
+        .promo-slide-details {
+            padding-left: 300px;
+        }
+    }
+
+    .footmenu {
+        padding: 20px 40px;
+    }
+
+    .footmenu-col {
+        max-width: 50%;
+    }
+
+    .index-page-footer {
+        margin-top: 20px;
+    }
+
+    .afisha-main {
+        padding-bottom: 20px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+    }
+
+    .footer-aside {
+        margin-top: 0;
+        flex: 1 1 auto;
+    }
+
+    .footer-aside-in {
+        margin: 20px 40px;
+        padding: 20px 0px 20px;
+        border: 0;
+    }
+
+    .copy-row {
+        flex-wrap: wrap;
+    }
+
+    .copy-col {
+        flex: 1 1 50%;
+
+        &:nth-child(2) {
+            order: 1;
+            flex: 1 1 100%;
+            text-align: left;
+        }
+    }
 }
 
 @media only screen and (min-width: 640px) {
@@ -106,12 +239,166 @@
     }
 
     .card-list-col  {
-        max-width: none;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .card-hasbg .card-in {
+        min-height: 400px;
+    }
+
+    .header-aside {
+        display: none;
+    }
+
+    .index-page-header-img {
+        margin-left: 0;
+    }
+
+    .promo-slider {
+        .promo-slide-image {
+            left: 20px;
+
+            &:before {
+                width: 80%;
+            }
+        }
+
+        .promo-slide-details {
+            padding-left: 33%;
+            padding-bottom: 40px;
+        }
+
+        .promo-slide-title {
+            font-size: 32px;
+        }
+    }
+
+    .header-in {
+        height: 50px;
+    }
+
+    .header-topline {
+        display: none;
+    }
+
+    .header-main {
+        display: none;
+    }
+
+    .header-topline-row {
+        height: 50px;
+    }
+
+    .pub-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    .pub-col {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 }
 
 @media only screen and (max-width: 479px) {
     .hide-480 {
         display: none !important;
+    }
+
+    .card-list-col  {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .card-hasbg .card-in {
+        min-height: 400px;
+    }
+
+    .footmenu {
+        padding: 20px 40px;
+    }
+
+    .footmenu-col {
+        max-width: 100%;
+    }
+
+    .footer-aside-in {
+        margin: 20px 40px;
+        padding: 20px 0px 20px;
+    }
+
+    .copy-col {
+        flex: 1 1 100%;
+
+        &:nth-child(2) {
+            order: 0;
+        }
+
+        &:nth-child(3) {
+            padding-top: 20px;
+            text-align: center;
+        }
+    }
+
+    .promo-slider {
+        .promo-slide-image {
+            width: calc(100% - 40px);
+            left: 20px;
+
+            img {
+                object-position: 50% 50%;
+            }
+
+            &:before {
+                display: none;
+            }
+        }
+
+        .promo-slide-details {
+            padding: 0;
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            @include linear-gradient(to bottom, rgba(#000, 0.2) 0%, rgba(#000, 0) 25%, rgba(#000, 0) 60%, rgba(#000, 0.2) 100%);
+        }
+
+        .promo-slide-title {
+            font-size: 28px;
+            max-width: none;
+            padding-top: 10px;
+            line-height: 1.25;
+            text-shadow:
+                0 1px 1px rgba(#000, 0.1),
+                0 5px 5px rgba(#000, 0.1),
+                0 10px 10px rgba(#000, 0.1),
+                0 15px 15px rgba(#000, 0.1),
+                0 20px 20px rgba(#000, 0.1);
+        }
+
+        .promo-slide-link {
+            position: absolute;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+
+            .button {
+                box-shadow: 0 0 0 2px rgba($gold, 0.25);
+            }
+        }
+    }
+
+    .promo-slider-nav-bounds {
+        display: none;
     }
 }

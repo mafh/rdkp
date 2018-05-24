@@ -844,6 +844,90 @@ h5,
     }
 }
 
+.menu-button {
+    display: block;
+    width:  40px;
+    height: 40px;
+    background-color: $brown;
+    position: fixed;
+    top:  5px;
+    left: 5px;
+    border: 0;
+    outline: 0;
+    transition: background-color 0.1s;
+    z-index: 50;
+    box-shadow:
+        0 0 0 2px rgba($darkbrown, 0.3);
+
+    &:hover {
+        background-color: $darkbrown;
+    }
+}
+
+.ico-menu {
+    @include middle;
+}
+
+.ico-menu .line {
+    width: 18px;
+    height: 2px;
+    background-color: $gold;
+    display: block;
+    margin: 3px 0;
+    transition: all 0.3s;
+    transform-origin: 50% 50%;
+    will-change: transform;
+
+    &:nth-child(3) {
+        width: 13px;
+    }
+}
+
+.sidebar-is-visible .menu-button {
+
+    .line {
+        width: 20px;
+        background-color: #fff;
+
+        &:nth-child(1){
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        &:nth-child(2){
+            opacity: 0;
+        }
+
+        &:nth-child(3){
+            transform: translateY(-5px) rotate(-45deg);
+        }
+    }
+
+}
+
+.topline-logo {
+    display: block;
+    position: relative;
+    display: block;
+    height: 28px;
+    text-decoration: none;
+    transition: opacity 0.5s;
+
+    font-family: $old;
+    color: $gold;
+    font-size: 14px;
+    line-height: 1.25;
+    position: absolute;
+    left: 50%;
+    top: 9px;
+    z-index: 50;
+    transform: translateX(-50%);
+
+    img {
+        height: 100%;
+        display: block;
+    }
+}
+
 .header-bg {
     position: absolute;
     height: 100%;
@@ -928,11 +1012,58 @@ h5,
     flex: 1 0 200px;
 }
 
+.h-socials {
+    @include clr;
+
+    a {
+        display: block;
+        height: 50px;
+        width: 50px;
+        position: relative;
+        float: left;
+
+        svg {
+            @include middle;
+            width: 18px;
+            height: 18px;
+            fill: $gold;
+        }
+
+        &:hover {
+            svg {
+                fill: lighten($gold, 10%);
+            }
+        }
+    }
+}
+
 .h-phone {
     display: inline-block;
     font-size: 20px;
     font-family: $old;
     color: $gold;
+    line-height: 1;
+    white-space: nowrap;
+    transition: filter 0.1s;
+    will-change: filter;
+
+    img {
+        width:  14.4px;
+        height: 12.7px;
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 2px;
+        margin-right: 5px;
+    }
+
+    span {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &:hover {
+        filter: brightness(1.2);
+    }
 }
 
 .header-topline-row {
@@ -942,6 +1073,7 @@ h5,
     justify-content: space-between;
     height: 60px;
     align-items: center;
+    position: relative;
 }
 
 .header-menu {
@@ -1173,6 +1305,8 @@ h5,
 
 .afisha-aside-in {
     padding: 0 20px;
+    position: sticky;
+    top: 0;
 }
 
 .afisha-aside-header {
@@ -1267,6 +1401,7 @@ h5,
             color: $gold;
         }
     }
+
 }
 
 .card-in {
@@ -2098,10 +2233,6 @@ h5,
     font-size: 18px;
 }
 
-.afisha-aside-in {
-    background-attachment: scroll;
-}
-
 .pub-list {
     padding-bottom: 50px;
 
@@ -2112,6 +2243,10 @@ h5,
         position: relative;
         margin-bottom: 20px;
     }
+}
+
+.pub-col {
+
 }
 
 
@@ -2183,7 +2318,7 @@ h5,
     .promo-slide-image {
         display: block;
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         left: 80px;
         width: 320px;
         height: 450px;
@@ -2248,7 +2383,7 @@ h5,
 
 .promo-slider-nav {
     &.swiper-container {
-        overflow: visible;
+        // overflow: visible;
     }
 
     .swiper-wrapper {
@@ -2340,12 +2475,12 @@ h5,
 
 .promo-button-prev {
     left: -100px;
-    // left: 0;
+    left: 0;
 }
 
 .promo-button-next {
     right: -100px;
-    // right: 0;
+    right: 0;
 }
 
 .gallery-list {
@@ -2408,5 +2543,60 @@ h5,
             display: block;
             padding-top: calc(50% - 25px);
         }
+    }
+}
+
+
+
+.developer {
+    text-decoration: none;
+    color: #666;
+}
+
+a.developer {
+    text-decoration: none;
+}
+
+.developer span {
+    margin-right: .5em;
+}
+
+.developer span,
+.developer img {
+    display: inline-block;
+    vertical-align: top;
+    -webkit-overflow-scrolling: touch;
+}
+
+.developer img {
+    filter: saturate(0);
+    transition: filter 0.1s;
+}
+
+.developer:hover img {
+    filter: saturate(1);
+}
+
+.sidebar-is-visible {
+    .topline-logo {
+        opacity: 0;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: $white;
+    z-index: 5;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+
+    &.is-visible {
+        transform: translateX(0);
     }
 }

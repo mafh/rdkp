@@ -161,7 +161,7 @@ function freeze(type, state) {
             });
 
         page.css({
-            'padding-right': scrollWidth + 'px'
+            'margin-right': scrollWidth + 'px'
         });
     } else {
         body
@@ -319,10 +319,9 @@ $(function headerAnimationFunction() {
 
 
 
-const stickybitsInstance = stickybits('.js-sidemenu', {
+const stickSidemenu = stickybits('.js-sidemenu', {
     stickyBitStickyOffset: 40
 });
-
 
 let promoSlider = new Swiper('.js-promo-slider', {
     direction: 'horizontal',
@@ -359,4 +358,41 @@ $(function(){
         promoSlider.controller.control = promoSliderNav;
         promoSliderNav.controller.control = promoSlider;
     }
+});
+
+
+$(function mobmenu() {
+    var $toggle = $('.js-menu-toggle'),
+        $sidebar = $('.js-sidebar'),
+        mobmenuVisible = false;
+
+    $toggle.on('click', function(event) {
+        event.preventDefault();
+
+        if (!mobmenuVisible) {
+
+            freeze('sidebar', true);
+
+            // head.css({
+            //     'margin-right': scrollWidth + 'px'
+            // });
+
+            mobmenuVisible = true;
+
+        } else {
+
+            freeze('sidebar', false);
+
+            // head.removeAttr('style');
+
+            mobmenuVisible = false;
+        }
+    });
+
+    $toggle.on('click', toggleMenu);
+
+    function toggleMenu() {
+        $sidebar.toggleClass('is-visible');
+    }
+
 });
