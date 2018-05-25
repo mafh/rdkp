@@ -2906,11 +2906,9 @@ a.developer {
     padding-left: 50px;
     position: relative;
 
-    p {
-        font-size: 16px;
-        font-weight: 400;
-        font-family: "Roboto Condensed", sans-serif;
-    }
+    font-size: 18px;
+    font-weight: 300;
+    font-family: $roboto;
 
     p:nth-last-child(2) {
         padding-bottom: 30px;
@@ -2919,10 +2917,10 @@ a.developer {
 
 .band-title {
     font-size: 35px;
-    font-family: 'Old';
+    font-family: $old;
     color: $gold;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 1.25;
     padding-bottom: 30px;
 }
 
