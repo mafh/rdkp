@@ -67,7 +67,6 @@ gulp.task('html', function() {
         .pipe(fileinclude({
             prefix: '@@'
         }))
-        // .pipe(rigger())
         .pipe(gulp.dest('build/'))
         .pipe(browserSync.reload({stream:true}));
 });
@@ -146,7 +145,6 @@ gulp.task('default', ['clean', 'sass', 'autoprefixer', 'html', 'jslib', 'es6', '
         .pipe(fileinclude({
             prefix: '@@'
         }))
-        // .pipe(rigger())
         .pipe(gulp.dest('build/'));
 
     gulp.watch('src/sass/**/*.scss', ['sass']);
