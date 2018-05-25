@@ -152,6 +152,7 @@ if (desktop === false) {
 function freeze(type, state) {
     var body = $('body'),
         page = $('.page-wrap');
+
     if (state === true) {
         body
             .addClass(type + '-is-visible')
@@ -335,6 +336,10 @@ let promoSlider = new Swiper('.js-promo-slider', {
     loop: false,
     lazy: {
         loadPrevNext: true,
+    },
+    navigation: {
+        nextEl: '.promo-button-next',
+        prevEl: '.promo-button-prev',
     }
 });
 
@@ -395,3 +400,133 @@ $(function mobmenu() {
     }
 
 });
+
+function mapsInit() {
+    var styleMap = [
+  {
+    "stylers": [
+      {
+        "saturation": -100
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.neighborhood",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.province",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  }
+]
+
+    var contactMapElem = document.getElementById('contact_map');
+
+    if (contactMapElem !== null) {
+        contactMap();
+    }
+
+    function contactMap() {
+
+        var location = {lat: 53.903201, lng: 27.562985};
+
+        var mapOptions = {
+            scrollwheel: false,
+            zoom: 17,
+            maxZoom: 19,
+            center: location,
+            position: location,
+            styles: styleMap
+        };
+
+        var map = new google.maps.Map(document.getElementById('contact_map'), mapOptions);
+
+        var markerImage = {
+            url: './i/map-marker.png',
+            size: new google.maps.Size(55, 50),
+            anchor: new google.maps.Point(20, 50),
+            labelOrigin: new google.maps.Point(20, 25),
+        };
+
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            icon: markerImage
+        });
+
+    }
+}

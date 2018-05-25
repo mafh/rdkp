@@ -39,11 +39,13 @@
 
         > li {
             display: flex;
-            flex: 1 1 calc(100% / 3);
+            flex: 1 1 calc(100% / 4);
+            max-width: calc(100% / 4);
 
             @for $i from 1 through 4 {
                 &:nth-child(#{$i}) {
                   flex: 1 1 calc(100% / 4);
+                  max-width: calc(100% / 4);
                   border-right: 1px solid rgba(#fff, 0.35);
                 }
             }
@@ -78,10 +80,23 @@
         display: none!important;
     }
 
+    .header-title {
+        font-size: 9vw;
+        padding-top: 75px;
+        padding-bottom: 50px;
+    }
+
+    h2 {
+        font-size: 7vw;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+    }
+
     .card-list-col  {
         max-width: 50%;
     }
-    
 
     .afisha-main {
         flex: 2;
@@ -91,26 +106,40 @@
         flex: 1;
     }
 
-    .promo-slider {
-
-        // .promo-slide-image {
-        //     left: 20px;
-        //     width: 250px;
-        //     height: 352px;
-        //     transform: translateY(-25%);
-        // }
-
-        // .promo-slide-details {
-        //     padding-left: 200px;
-        // }
+    .backnav {
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
-    // .afisha-aside-in {
-    //     max-height: 100vh;
-    //     overflow: auto;
-    //     -webkit-overflow-scrolling: auto;
-    // }
+    .sidemenu {
+        padding: 15px 25px;
+        width: 240px;
 
+        > li {
+            > a {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .l-section .wrap {
+        padding-left: 300px;
+    }
+
+    .header-aside {
+        flex: 1 1 160px;
+    }
+
+    .header-logo {
+        width: 160px;
+        font-size: 16px;
+        margin-left: -20px;
+    }
+
+    .l-section section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -122,6 +151,15 @@
 @media only screen and (max-width: 767px) {
     .hide-768 {
         display: none !important;
+    }
+
+    .l-aside {
+        display: none;
+    }
+
+    .l-section .wrap {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .card-list-col  {
@@ -144,8 +182,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin-left: -20px;
-        margin-right: -20px;
+        margin-left:  0;
+        margin-right: 0;
     }
 
     .pub-col {
@@ -256,6 +294,10 @@
     }
 
     .promo-slider {
+        &.swiper-container {
+            height: 480px;
+        }
+
         .promo-slide-image {
             left: 20px;
 
@@ -290,8 +332,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        margin-left: -20px;
-        margin-right: -20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .pub-col {
@@ -300,11 +342,29 @@
         padding: 0 20px;
         box-sizing: border-box;
     }
+
+    h2 {
+        font-size: 36px;
+        word-break: break-word;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
 }
 
 @media only screen and (max-width: 479px) {
     .hide-480 {
         display: none !important;
+    }
+
+    .pub-list {
+        padding-bottom: 0;
+    }
+
+    .col-xxs-12 {
+        flex-basis: 100%;
+        max-width: 100%;
     }
 
     .card-list-col  {
@@ -363,7 +423,7 @@
             box-sizing: border-box;
             text-align: center;
             position: relative;
-            @include linear-gradient(to bottom, rgba(#000, 0.2) 0%, rgba(#000, 0) 25%, rgba(#000, 0) 60%, rgba(#000, 0.2) 100%);
+            @include linear-gradient(to bottom, rgba(#000, 0) 0%, rgba(#000, 0.7) 10%, rgba(#000, 0) 30%, rgba(#000, 0.1) 60%, rgba(#000, 0.2) 100%);
         }
 
         .promo-slide-title {
@@ -385,7 +445,7 @@
             width: 100%;
             box-sizing: border-box;
             text-align: center;
-            bottom: 0;
+            bottom: 20px;
             left: 0;
 
             .button {
@@ -396,5 +456,30 @@
 
     .promo-slider-nav-bounds {
         display: none;
+    }
+
+    .usercontent {
+        blockquote {
+            padding-top: 80px;
+            padding-bottom: 30px;
+
+            margin: 0;
+            q {
+                font-size: 26px;
+            }
+        }
+    }
+
+    .b-title {
+        font-size: 30px;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        &:after {
+            right: auto;
+            left: 0;
+            top: 100%;
+        }
     }
 }
