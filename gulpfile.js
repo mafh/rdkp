@@ -45,14 +45,14 @@ gulp.task('browser-sync', function(){
     browserSync({
         server: {
             baseDir: 'build',
-            cors: true,
-            middleware: function (req, res, next) {
-                res.setHeader('Access-Control-Allow-Origin', '*');
-                next();
-            }
+            // cors: true,
+            // middleware: function (req, res, next) {
+            //     res.setHeader('Access-Control-Allow-Origin', '*');
+            //     next();
+            // }
         },
-        cors: true,
-        notify: false
+        // cors: true,
+        // notify: false
     });
 });
 

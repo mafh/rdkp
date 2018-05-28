@@ -452,7 +452,7 @@ h5,
 .usercontent {
     font-size: 20px;
 
-    a {
+    a:not(.button) {
         color: $gold;
         text-decoration: underline;
 
@@ -2887,10 +2887,9 @@ a.developer {
 }
 
 .band {
-    display: flex;
-    flex-direction: row;
     position: relative;
     padding-bottom: 150px;
+    @include clr;
 
     &:last-child {
         padding-bottom: 50px;
@@ -2898,21 +2897,10 @@ a.developer {
 }
 
 .band-img {
-    flex: 0 1 25%;
-}
-
-.band-details {
-    flex: 0 1 75%;
-    padding-left: 50px;
-    position: relative;
-
-    font-size: 18px;
-    font-weight: 300;
-    font-family: $roboto;
-
-    p:nth-last-child(2) {
-        padding-bottom: 30px;
-    }
+    float: left;
+    width: 33.33%;
+    padding-right: 50px;
+    margin-bottom: 25px;
 }
 
 .band-title {
@@ -2924,12 +2912,27 @@ a.developer {
     padding-bottom: 30px;
 }
 
+.band-details {
+    position: relative;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: $roboto;
+
+    overflow: hidden;
+
+    p:nth-last-child(2) {
+        padding-bottom: 30px;
+    }
+}
+
 .band-img-wrap {
     display: inline-block;
     position: relative;
 
     img {
         position: relative;
+        display: block;
+        max-width: 100%;
     }
     
     &:before {
@@ -2947,7 +2950,7 @@ a.developer {
 
     &.is-visible {
         &:before {
-            transform: translate(100px, 100px);
+            transform: translate(25%, 25%);
         }
     }
 }
