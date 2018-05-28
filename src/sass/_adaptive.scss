@@ -23,6 +23,24 @@
         max-width: 33.33%;
     }
 
+    .js .card-list-col {
+        &:nth-child(4n + 1) .card.is-visible {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-child(4n + 2) .card.is-visible {
+            transition-delay: 0.2s;
+        }
+
+        &:nth-child(4n + 3) .card.is-visible {
+            transition-delay: 0.3s;
+        }
+
+        &:nth-child(4n + 4) .card.is-visible {
+            transition-delay: 0.1s;
+        }
+    }
+
     .card-list-col-5 {
         max-width: 25%;
     }
@@ -98,6 +116,24 @@
         max-width: 50%;
     }
 
+    .js .card-list-col {
+        &:nth-child(4n + 1) .card.is-visible {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-child(4n + 2) .card.is-visible {
+            transition-delay: 0.2s;
+        }
+
+        &:nth-child(4n + 3) .card.is-visible {
+            transition-delay: 0.1s;
+        }
+
+        &:nth-child(4n + 4) .card.is-visible {
+            transition-delay: 0.2s;
+        }
+    }
+
     .afisha-main {
         flex: 2;
     }
@@ -126,19 +162,17 @@
         padding-left: 300px;
     }
 
-    .header-aside {
-        flex: 1 1 160px;
-    }
-
-    .header-logo {
-        width: 160px;
-        font-size: 16px;
-        margin-left: -20px;
-    }
-
     .l-section section {
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+
+    .gcol {
+        max-width: 33.33%;
+
+        .gallery-item-img:before {
+            padding-top: 100%;
+        }
     }
 }
 
@@ -155,6 +189,10 @@
 
     .l-aside {
         display: none;
+    }
+
+    .l-aside-mobile {
+        display: block;
     }
 
     .l-section .wrap {
@@ -263,6 +301,12 @@
             text-align: left;
         }
     }
+
+    .gallery-slider {
+        &.swiper-container {
+            height: auto;
+        }
+    }
 }
 
 @media only screen and (min-width: 640px) {
@@ -351,6 +395,10 @@
     h3 {
         font-size: 32px;
     }
+
+    .gcol {
+        max-width: 50%;
+    }
 }
 
 @media only screen and (max-width: 479px) {
@@ -370,6 +418,24 @@
     .card-list-col  {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .js .card-list-col {
+        &:nth-child(4n + 1) .card.is-visible {
+            transition-delay: 0s;
+        }
+
+        &:nth-child(4n + 2) .card.is-visible {
+            transition-delay: 0s;
+        }
+
+        &:nth-child(4n + 3) .card.is-visible {
+            transition-delay: 0s;
+        }
+
+        &:nth-child(4n + 4) .card.is-visible {
+            transition-delay: 0s;
+        }
     }
 
     .card-hasbg .card-in {
@@ -494,5 +560,9 @@
 
     .band-title {
         font-size: 30px;
+    }
+
+    .gcol {
+        max-width: 100%;
     }
 }

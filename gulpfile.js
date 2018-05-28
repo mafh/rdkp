@@ -52,7 +52,7 @@ gulp.task('browser-sync', function(){
             // }
         },
         // cors: true,
-        // notify: false
+        notify: false
     });
 });
 

@@ -16,14 +16,109 @@
             <div class="wrap">
                 <h3 class="color--gold">На проспекте Независимости начали высаживать взрослые деревья</h3>
 
-                <p>{gallery}</p>
+                <div class="gallery-slider js-gallery-slider swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/1200/900" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                Для того  чтобы записаться на выбранное Вами занятие, необязательно к нам приезжать!
+                                <br>
+                                Вы можете просто позвонить (017) 327-39-49, (029) 677-23-02!
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/850/1200" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                <p>В репертуаре ансамбля – традиционные белорусские народные танцы (“Бульба”, “Віцебская полька”, “Лучынкі”, “Лявоніха”, “Святочная полька”)</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/1100/800" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequuntur iste similique nam quas necessitatibus.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/1250/920" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequuntur iste similique nam quas necessitatibus.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/1200/910" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequuntur iste similique nam quas necessitatibus.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img data-src="https://picsum.photos/1200/870" class="swiper-lazy" alt="">
+                            <div class="gallery-descr" data-swiper-parallax="-400">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequuntur iste similique nam quas necessitatibus.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-button-prev show-640">
+                        <svg viewBox="0 0 9 15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-left"></use></svg>
+                    </div>
+                    <div class="gallery-button-next show-640">
+                        <svg viewBox="0 0 9 15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-right"></use></svg>
+                    </div>
+                </div>
 
-                <div class="flex-row">
+                <div class="gallery-slider-nav js-gallery-slider-nav swiper-container hide-640">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-01.jpg" class="swiper-lazy" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-02.jpg" class="swiper-lazy" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-03.jpg" class="swiper-lazy" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-04.jpg" class="swiper-lazy" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-05.jpg" class="swiper-lazy" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-lazy-preloader"></div>
+                            <img data-src="./userimg/thumb-06.jpg" class="swiper-lazy" alt="">
+                        </div>
+                    </div>
+                    <div class="gallery-button-prev">
+                        <svg viewBox="0 0 9 15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-left"></use></svg>
+                    </div>
+                    <div class="gallery-button-next">
+                        <svg viewBox="0 0 9 15"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-right"></use></svg>
+                    </div>
+                </div>
+
+                <div class="flex-row middle-xs article-footer">
                     <div class="col-xs-6">
-                        <a href="#">Вернуться к списку</a>
+                        <a href="javascript: window.history.back()" class="button">Вернуться к списку</a>
                     </div>
                     <div class="col-xs-6 end-xs">
-                        {socials}
+                        <div class="flex-row flex-row-padding-half middle-xs">
+                            <div class="col-xs-6">Поделись галереей в соцсетях</div>
+                            <div class="col-xs-6">
+                                <div class="socials-group">
+                                    <div class="socials-row">
+                                        <a href="#" target="_blank"><svg viewBox="0 0 11 21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-fb"></use></svg></a>
+                                        <a href="#" target="_blank"><svg viewBox="0 0 24 14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-vk"></use></svg></a>
+                                        <a href="#" target="_blank"><svg viewBox="0 0 30 30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-ok"></use></svg></a>
+                                        <a href="#" target="_blank"><svg viewBox="0 0 20 17"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-tw"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
