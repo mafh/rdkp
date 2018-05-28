@@ -120,6 +120,7 @@ if (ie !== false) {
 
 if (ie !== false && ie <= 9) {
     $('body').addClass('ie9');
+    oldBrowser();
 }
 
 if (ie !== false && ie === 10) {
@@ -220,12 +221,19 @@ $(function(){
 });
 
 function preloaderHide() {
-    console.log('preloaderHide');
     $('#page-preloader').fadeOut(300);
     $('body').css({
         'overflow': 'auto',
         'opacity': '1'
     });
+}
+
+function oldBrowser() {
+    $('body').css({
+        'overflow': 'hidden',
+        'opacity': '1'
+    });
+    $('#old-browsers').show();
 }
 
 $(function headerAnimationFunction() {
@@ -587,4 +595,24 @@ function mapsInit() {
         });
 
     }
+}
+
+$(function() {objectFitImages()});
+
+
+var select = document.querySelector('[data-select]');
+if (select !== null) {
+    var selectEl = new Choices('[data-select]', {
+        placeholder: false,
+        placeholderValue: null,
+        searchPlaceholderValue: null,
+        searchEnabled: false,
+        shouldSort: false,
+        shouldSortItems: false,
+        itemSelectText: '',
+        noChoicesText: 'Данных нет',
+        // callbackOnInit: function() {
+            // console.log(this);
+        // },
+    });
 }

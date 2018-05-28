@@ -66,7 +66,7 @@ gulp.task('html', function() {
     return gulp.src('src/**/*.html')
         .pipe(fileinclude({
             prefix: '@@'
-        }))
+         }))
         .pipe(gulp.dest('build/'))
         .pipe(browserSync.reload({stream:true}));
 });
