@@ -33,7 +33,10 @@ gulp.task('autoprefixer', function () {
     return gulp.src('src/temp/**/*.css')
         .pipe(wait(200))
         .pipe(postcss( [ autoprefixer([
-            'last 5 versions', '> 1%', 'ie >= 9', 'and_chr >= 2.3'
+            'last 5 versions',
+            '> 1%',
+            'ie >= 9',
+            'and_chr >= 2.3'
         ], {
             cascade: true
         }) ] ))

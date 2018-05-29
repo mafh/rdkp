@@ -3656,7 +3656,10 @@ a.developer {
 }
 
 .news-slider-footer {
+    float: left;
     margin-top: -50px;
+    position: relative;
+    z-index: 1;
 }
 
 .news-item {
@@ -3668,6 +3671,7 @@ a.developer {
         padding-bottom: 20px;
         display: inline-block;
         line-height: 1.25;
+        transition: color 0.1s;
     }
 
     &-date {
@@ -3675,5 +3679,11 @@ a.developer {
         color: $gold;
         font-size: 14px;
         text-transform: uppercase;
+    }
+
+    &:hover {
+        .news-item-title {
+            color: $gold;
+        }
     }
 }

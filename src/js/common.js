@@ -345,26 +345,26 @@ class indexLayoutFunc {
     constructor($main, $news) {
         this.$main = $main;
         this.$news = $news;
+        this.update();
     }
 
     update() {
-        console.log(this.$news.height());
         let height = this.$news.height();
         this.$main.css('padding-bottom', height + 'px');
         this.$news.css('margin-top', - height + 'px');
     }
 }
 
-var $indexLayout;
-
 $(function(){
-    const $main = $('.js-index-main');
-    const $news = $('.js-index-news');
-    $indexLayout = new indexLayoutFunc($main, $news);
+    if (desktop === true) {
+        const $main = $('.js-index-main');
+        const $news = $('.js-index-news');
+        const $indexLayout = new indexLayoutFunc($main, $news);
 
-    $(window).on('resize', function(event) {
-        $indexLayout.update();
-    });
+        $(window).on('resize', function(event) {
+            $indexLayout.update();
+        });
+    }
 });
 
 const stickSidemenu = stickybits('.js-sidemenu', {
