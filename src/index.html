@@ -11,7 +11,7 @@
         @@include('partials/header-index.html', {"image":"./userimg/bg-title-1.jpg"})
         <div class="l-afisha">
             <div class="afisha-row">
-                <div class="afisha-main">
+                <div class="afisha-main js-index-main">
                     @@include('partials/afisha-filter.html', {"title": "Афиша"})
                     @@include('partials/afisha-card-list.html')
                 </div>
@@ -68,6 +68,7 @@
             </div>
         </div>
     </div>
+    @@include('partials/news-slider.html')
     @@include('partials/footer.html', { "footerClass": "index-page-footer"})
     @@include('partials/scripts.html')
 </body>

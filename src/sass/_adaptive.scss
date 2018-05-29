@@ -85,6 +85,12 @@
         max-width: 33.33%;
     }
 
+    .news-slider-wrap {
+        .wrap {
+            padding-right: 295px;
+        }
+    }
+
 }
 
 @media only screen and (min-width: 1024px) {
@@ -240,7 +246,6 @@
     }
 
     .promo-slider {
-        // display: none;
         .promo-slide-title {
             font-size: 7vw;
         }
@@ -271,6 +276,10 @@
 
     .afisha-main {
         padding-bottom: 20px;
+    }
+
+    .usercontent .afisha-main {
+        padding-bottom: 50px;
     }
 
     .footer-row {
@@ -305,6 +314,54 @@
     .gallery-slider {
         &.swiper-container {
             height: auto;
+        }
+
+        .gallery-descr {
+            padding: 10px;
+            font-size: 16px;
+        }
+    }
+
+    .event-aside {
+        width: 220px;
+    }
+
+    .event-header {
+        padding: 20px 25px 50px;
+        font-size: 18px;
+    }
+
+    .event-footer {
+        padding: 50px 25px 25px;
+    }
+
+    .usercontent .afisha-main {
+        padding-top: 50px;
+    }
+
+    .js-index-main {
+        padding-bottom: 0 !important;
+    }
+
+    .js-index-news {
+        margin-top: 20px !important;
+    }
+
+    .news-slider-wrap {
+        margin: 0 20px;
+    }
+
+    .news-slider-wrap .wrap {
+        padding: 0 20px;
+    }
+
+    .news-slider-footer {
+        margin-top: 0;
+        padding-top: 50px;
+        text-align: center;
+
+        .button {
+            display: block;
         }
     }
 }
@@ -398,6 +455,22 @@
 
     .gcol {
         max-width: 50%;
+    }
+
+    .l-event {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-aside {
+        float: none;
+        width: auto;
+        position: relative;
+        order: 1;
+    }
+
+    .event-main {
+        padding: 0;
     }
 }
 
@@ -524,6 +597,19 @@
         display: none;
     }
 
+    .gallery-slider {
+        &.swiper-container {
+            height: auto;
+        }
+
+        .gallery-descr {
+            padding: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            background-color: rgba(#000, 0.5);
+        }
+    }
+
     .usercontent {
         blockquote {
             padding-top: 80px;
@@ -568,5 +654,27 @@
 
     .afisha-filter {
         padding-right: 0;
+    }
+
+    .article-footer {
+        .end-xs {
+            text-align: left;
+        }
+    }
+
+    .col-xxs-socials {
+        padding-top: 40px;
+    }
+
+    .pub-slider.swiper-container-horizontal .swiper-pagination {
+        margin-left: 0;
+        width: calc(100% - 100px);
+        text-align: left;
+    }
+
+    .news-slider.swiper-container-horizontal .swiper-pagination {
+        margin-left: 0;
+        width: calc(100% - 100px);
+        text-align: left;
     }
 }

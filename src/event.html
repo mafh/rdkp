@@ -28,12 +28,19 @@
                         </header>
                         <footer class="event-footer">
                             <a href="#" class="button">
-                                <i>ico</i>
+                                <i class="ico ico-ticket"></i>
                                 <span>Купить билет</span>
                             </a>
                             <div class="event-socials">
                             <p>Поделитесь событием в соцсетях:</p>
-                            <p>{socials}</p>
+                            <div class="socials-group">
+                                <div class="socials-row">
+                                    <a href="#" target="_blank"><svg viewBox="0 0 11 21"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-fb"></use></svg></a>
+                                    <a href="#" target="_blank"><svg viewBox="0 0 24 14"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-vk"></use></svg></a>
+                                    <a href="#" target="_blank"><svg viewBox="0 0 30 30"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-ok"></use></svg></a>
+                                    <a href="#" target="_blank"><svg viewBox="0 0 20 17"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#ico-tw"></use></svg></a>
+                                </div>
+                            </div>
                             </div>
                         </footer>
                     </div>
@@ -49,7 +56,9 @@
                         <a href="#" class="b-tag">#казанова</a>
                         <a href="#" class="b-tag">#постановка</a>
                     </div>
-                    <p>{image slider}</p>
+                    
+                    @@include('partials/image-slider.html')
+
                     <p>После успешного проекта - мюзикла «Дубровский» – Белорусский государственный университет культуры и искусств в творческом содружестве с популярным российским композитором и продюсером Кимом Брейтбургом представляет ценителям искромётного музыкального жанра новый увлекательный сюжет - о Казанове. </p>
                     <p>Казанова Кима Брейтбурга и Евгения Муравьёва (автор либретто) – это современный молодой человек, безусловно, «сердцеед» и любитель приключений, однако при этом обладающий прекрасным чувством юмора и умеющий пошутить над собой и своими авантюрами. </p>
                     <p>Мюзикл-комикс «Казанова» - новая версия жизни знаменитого героя-любовника, рассказанная той же творческой группой студентов-актёров университета культуры и российских профессионалов постановщиков языком гротеска, иронии, шутки, курьёза в окружении яркой, великолепной, запоминающейся музыки.</p>
@@ -85,13 +94,11 @@
                 </div>
             </div>
 
-            <div class="l-afisha">
-                <div class="afisha-row">
-                    <div class="afisha-main">
-                        <div class="wrap">
-                            @@include('partials/afisha-filter.html', {"title": "Ещё мероприятия"})
-                            @@include('partials/afisha-card-slider.html')
-                        </div>
+            <div class="l-afisha bg--white">
+                <div class="afisha-main">
+                    <div class="wrap">
+                        @@include('partials/afisha-filter.html', {"title": "Ещё мероприятия"})
+                        @@include('partials/afisha-card-slider.html')
                     </div>
                 </div>
             </div>

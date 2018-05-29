@@ -341,6 +341,32 @@ $(function headerAnimationFunction() {
     header.prepare();
 });
 
+class indexLayoutFunc {
+    constructor($main, $news) {
+        this.$main = $main;
+        this.$news = $news;
+    }
+
+    update() {
+        console.log(this.$news.height());
+        let height = this.$news.height();
+        this.$main.css('padding-bottom', height + 'px');
+        this.$news.css('margin-top', - height + 'px');
+    }
+}
+
+var $indexLayout;
+
+$(function(){
+    const $main = $('.js-index-main');
+    const $news = $('.js-index-news');
+    $indexLayout = new indexLayoutFunc($main, $news);
+
+    $(window).on('resize', function(event) {
+        $indexLayout.update();
+    });
+});
+
 const stickSidemenu = stickybits('.js-sidemenu', {
     stickyBitStickyOffset: 40
 });
@@ -400,6 +426,7 @@ let gallerySlider = new Swiper('.js-gallery-slider', {
     scrollbar: false,
     resistance: false,
     loop: false,
+    autoHeight: true,
     lazy: {
         loadPrevNext: true,
     },
@@ -427,6 +454,157 @@ $(function(){
     if ($('.js-gallery-slider').length > 0 && $('.js-gallery-slider-nav').length > 0) {
         gallerySlider.controller.control = gallerySliderNav;
         gallerySliderNav.controller.control = gallerySlider;
+    }
+});
+
+let imageSlider = new Swiper('.js-image-slider', {
+    direction: 'horizontal',
+    speed: 1000,
+    effect: 'slide',
+    slidesPerView: 1,
+    pagination: false,
+    navigation: false,
+    scrollbar: false,
+    resistance: false,
+    loop: false,
+    autoHeight: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    navigation: {
+        nextEl: '.image-button-next',
+        prevEl: '.image-button-prev',
+    }
+});
+
+let cardSlider = new Swiper('.js-card-slider', {
+    direction: 'horizontal',
+    speed: 1000,
+    effect: 'slide',
+    slidesPerView: 5,
+    parallax:false,
+    pagination: false,
+    navigation: false,
+    scrollbar: false,
+    resistance: false,
+    loop: false,
+    autoHeight: false,
+    roundLengths: true,
+    observer: true,
+    observeParents: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    navigation: {
+        nextEl: '.card-button-next',
+        prevEl: '.card-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+          slidesPerView: 1,
+        },
+        767: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+    }
+});
+
+let pubSlider = new Swiper('.js-pub-slider', {
+    direction: 'horizontal',
+    speed: 1000,
+    effect: 'slide',
+    slidesPerView: 5,
+    spaceBetween: 50,
+    parallax:false,
+    pagination: false,
+    navigation: false,
+    scrollbar: false,
+    resistance: false,
+    loop: false,
+    autoHeight: false,
+    roundLengths: true,
+    observer: true,
+    observeParents: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    navigation: {
+        nextEl: '.pub-button-next',
+        prevEl: '.pub-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+          slidesPerView: 1,
+        },
+        767: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1280: {
+          slidesPerView: 4,
+        },
+    }
+});
+
+let newsSlider = new Swiper('.js-news-slider', {
+    direction: 'horizontal',
+    speed: 1000,
+    effect: 'slide',
+    slidesPerView: 4,
+    spaceBetween: 50,
+    parallax:false,
+    pagination: false,
+    navigation: false,
+    scrollbar: false,
+    resistance: false,
+    loop: false,
+    autoHeight: false,
+    roundLengths: true,
+    observer: true,
+    observeParents: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    navigation: {
+        nextEl: '.news-button-next',
+        prevEl: '.news-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+    },
+    breakpoints: {
+        480: {
+          slidesPerView: 1,
+        },
+        767: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1280: {
+          slidesPerView: 3,
+        },
     }
 });
 

@@ -110,15 +110,15 @@ p:last-child {
 }
 
 .bg--white {
-    background-color: #fff;
+    background-color: #fff!important;
 }
 
 .bg--black {
-    background-color: $black;
+    background-color: $black!important;
 }
 
 .bg--yellow {
-    background-color: $yellow;
+    background-color: $yellow!important;
 }
 
 .flex-row {
@@ -452,7 +452,7 @@ h5,
 .usercontent {
     font-size: 20px;
 
-    a:not(.button) {
+    a {
         color: $gold;
         text-decoration: underline;
 
@@ -744,7 +744,8 @@ h5,
     }
 }
 
-.button {
+.button,
+.usercontent .button {
     font-family: $roboto;
     display: inline-block;
     vertical-align: middle;
@@ -794,6 +795,15 @@ h5,
     vertical-align: middle;
     width: 36px;
     height: 21px;
+}
+
+.ico-ticket {
+    background-image: url('../i/icons/ico-ticket.png');
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    width: 33px;
+    height: 20px;
 }
 
 // ==================== LAYOUT ====================
@@ -1083,6 +1093,7 @@ h5,
             padding: 0 20px;
             box-sizing: border-box;
             position: relative;
+            justify-content: center;
 
             span {
                 flex: 1 1 auto;
@@ -1307,16 +1318,24 @@ h5,
     margin: 0 auto;
     position: relative;
     padding-top: 35px;
+
+    .afisha-main {
+        flex: 1 1 auto;
+    }
+
+    .afisha-aside {
+        flex: 0 0 256px;
+    }
 }
 
 .afisha-main {
-    flex: 1 1 auto;
-    padding-bottom: 110px;
+}
+
+.usercontent .afisha-main {
+    padding-top: 80px;
 }
 
 .afisha-aside {
-    flex: 0 0 256px;
-    min-height: 100vh;
     background-color: $black;
     position: relative;
     z-index: 1;
@@ -1356,20 +1375,22 @@ h5,
     max-width: 20%;
 }
 
-.card {
+.card,
+.usercontent .card {
     display: flex;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
     background-color: $white;
+    text-decoration: none;
 
     box-shadow:
-        1px 0 0 0 #d9d1c3,
-        0 1px 0 0 #d9d1c3,
-        1px 1px 0 0 #d9d1c3,
-        1px 0 0 0 #d9d1c3 inset,
-        0 1px 0 0 #d9d1c3 inset;
+        1px 0 0 0 $lightgold,
+        0 1px 0 0 $lightgold,
+        1px 1px 0 0 $lightgold,
+        1px 0 0 0 $lightgold inset,
+        0 1px 0 0 $lightgold inset;
 
     &:hover {
         background-color: #fff;
@@ -1379,7 +1400,7 @@ h5,
     }
 }
 
-.js .card {
+.js .card.js-appear {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.3s, transform 0.3s;
@@ -1409,12 +1430,11 @@ h5,
     }
 }
 
-.card-hasbg {
-
+.card-hasbg,
+.usercontent .card-hasbg {
     &.is-visible {
         z-index: 1;
     }
-
     &:hover {
         .card-title {
             color: $gold;
@@ -1597,7 +1617,7 @@ h5,
 }
 
 .index-page-footer {
-    margin-top: -90px;
+    // margin-top: -90px;
 }
 
 .l-footer {
@@ -2170,7 +2190,8 @@ h5,
     display: block;
 }
 
-.b-tag {
+.b-tag,
+.usercontent .b-tag {
     display: inline-block;
     height: 30px;
     line-height: 30px;
@@ -2185,8 +2206,11 @@ h5,
     transition: background-color 0.2s;
     padding: 0 10px;
     margin-right: 10px;
+    text-decoration: none;
 
     &:hover {
+        color: $white;
+        text-decoration: none;
         background-color: $brown;
     }
 }
@@ -2583,6 +2607,14 @@ h5,
     color: #000;
     text-align: center;
     margin: 0 25px 40px;
+
+    &:hover {
+        color: $brown;
+        .gallery-item-img img {
+            transform: scale(1.05);
+            filter: sepia(1);
+        }
+    }
 }
 
 .gallery-item-img {
@@ -2601,6 +2633,9 @@ h5,
         display: block;
         @include cover;
         top: 0;
+        transform-origin: 50% 0%;
+        transition: transform 0.2s, filter 0.2s;
+        will-change: transform, filter;
     }
 }
 
@@ -2998,15 +3033,15 @@ a.developer {
         margin-bottom: 50px;
         background-image: url('../i/pattern-wave.png');
         background-attachment: fixed;
-        height: 50vh;
     }
 
     img {
-        max-width: 100%;
-        max-height: 100%;
-        margin: 0 auto;
         display: block;
+        max-width: 100%;
+        max-height: 50vh;
+        margin: 0 auto;
     }
+
 
     .gallery-button-prev,
     .gallery-button-next {
@@ -3043,9 +3078,7 @@ a.developer {
     }
 }
 
-
 .gallery-slider-nav {
-
     &.swiper-container {
         margin-bottom: 50px;
         background-image: url('../i/pattern-wave.png');
@@ -3146,6 +3179,85 @@ a.developer {
 .gallery-button-next {
     right: -100px;
     right: 0;
+}
+
+
+
+
+
+
+
+.image-slider {
+    &.swiper-container {
+        width: 100%;
+        margin-top: 40px;
+        margin-bottom: 50px;
+        background-image: url('../i/pattern-wave.png');
+        background-attachment: fixed;
+    }
+
+    .swiper-slide {
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 50vh;
+        margin: 0 auto;
+    }
+
+    .image-button-prev,
+    .image-button-next {
+        width: 40px;
+        height: 40px;
+        background-color: $darkbrown;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        transition: opacity 0.3s, width 0.3s;
+        transform-origin: 50% 50%;
+
+        svg {
+            position: absolute;
+            @include middle;
+            width: 9px;
+            height: 15px;
+            fill: $gold;
+        }
+
+        &:hover {
+            background-color: lighten($darkbrown, 5%);
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.25;
+        }
+    }
+
+    .image-button-prev {
+        right: 40px;
+    }
+
+    .image-descr {
+        position: absolute;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-shadow:
+            2px 2px 2px rgba($darkbrown, 0.5),
+            2px 2px 4px rgba($darkbrown, 0.5),
+            2px 2px 10px rgba($darkbrown, 0.5);
+    }
 }
 
 .article-footer {
@@ -3270,4 +3382,298 @@ a.developer {
         border-color: $red!important;
     }
 
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-top: 1px solid $gold;
+
+    a,
+    b {
+        flex: 1 1 auto;
+        font-size: 20px;
+        font-family: $old;
+        font-weight: 700;
+        height: 50px;
+        line-height: 54px;
+        text-align: center;
+        border-right: 1px solid $gold;
+        color: #000;
+        min-width: 50px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        &:last-child {
+            border-right: 0;
+        }
+    }
+
+    a:hover {
+        color: $gold;
+    }
+
+    .is-active {
+        background-color: $gold;
+        color: #fff;
+    }
+}
+
+
+.card-slider {
+    &.swiper-container {
+        padding-bottom: 100px;
+    }
+
+    .swiper-wrapper {
+        box-shadow:
+            1px 0 0 0 $lightgold,
+            0 1px 0 0 $lightgold,
+            1px 1px 0 0 $lightgold,
+            1px 0 0 0 $lightgold inset,
+            0 1px 0 0 $lightgold inset;
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    .card-button-prev,
+    .card-button-next {
+        width:  50px;
+        height: 50px;
+        background-color: $gold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        transition: opacity 0.3s, width 0.3s;
+        transform-origin: 50% 50%;
+
+        svg {
+            position: absolute;
+            @include middle;
+            width: 9px;
+            height: 15px;
+            fill: $darkbrown;
+        }
+
+        &:hover {
+            background-color: lighten($gold, 5%);
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.25;
+        }
+    }
+
+    .card-button-prev {
+        right: 50px;
+    }
+
+    &.swiper-container-horizontal {
+        .swiper-pagination {
+            z-index: 20;
+            bottom: 0;
+            height: 50px;
+            width: calc(100% - 200px);
+            margin-left: 100px;
+
+            .swiper-pagination-bullet {
+                &:hover {
+                    background-color: $brown;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $gold;
+            }
+        }
+    }
+} 
+
+.pub-slider-wrap {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.pub-slider {
+    &.swiper-container {
+        padding-bottom: 100px;
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    .gallery-item {
+        margin: 0;
+    }
+
+    .pub-button-prev,
+    .pub-button-next {
+        width:  50px;
+        height: 50px;
+        background-color: $gold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        transition: opacity 0.3s, width 0.3s;
+        transform-origin: 50% 50%;
+
+        svg {
+            position: absolute;
+            @include middle;
+            width: 9px;
+            height: 15px;
+            fill: $darkbrown;
+        }
+
+        &:hover {
+            background-color: lighten($gold, 5%);
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.25;
+        }
+    }
+
+    .pub-button-prev {
+        right: 50px;
+    }
+
+    &.swiper-container-horizontal {
+        .swiper-pagination {
+            z-index: 20;
+            bottom: 0;
+            height: 50px;
+            width: calc(100% - 200px);
+            margin-left: 100px;
+
+            .swiper-pagination-bullet {
+                &:hover {
+                    background-color: $brown;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $gold;
+            }
+        }
+    }
+}
+
+.news-slider-wrap {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .wrap {
+        padding-right: 275px;
+        position: relative;
+    }
+    .b-title {
+        margin-bottom: 40px;
+    }
+}
+
+.news-slider {
+
+    &.swiper-container {
+        padding-bottom: 100px;
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    .gallery-item {
+        margin: 0;
+    }
+
+    .news-button-prev,
+    .news-button-next {
+        width:  50px;
+        height: 50px;
+        background-color: $gold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        transition: background-color 0.2s;
+        cursor: pointer;
+        transition: opacity 0.3s, width 0.3s;
+        transform-origin: 50% 50%;
+
+        svg {
+            position: absolute;
+            @include middle;
+            width: 9px;
+            height: 15px;
+            fill: $darkbrown;
+        }
+
+        &:hover {
+            background-color: lighten($gold, 5%);
+        }
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+            opacity: 0.25;
+        }
+    }
+
+    .news-button-prev {
+        right: 50px;
+    }
+
+    &.swiper-container-horizontal {
+        .swiper-pagination {
+            z-index: 20;
+            bottom: 0;
+            width: calc(100% - 200px);
+            margin-left: 100px;
+            height: 30px;
+
+            .swiper-pagination-bullet {
+                &:hover {
+                    background-color: $brown;
+                }
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $gold;
+            }
+        }
+    }
+}
+
+.news-slider-footer {
+    margin-top: -50px;
+}
+
+.news-item {
+    &-title {
+        font-size: 24px;
+        color: #fff;
+        font-family: $old;
+        font-weight: 700;
+        padding-bottom: 20px;
+        display: inline-block;
+        line-height: 1.25;
+    }
+
+    &-date {
+        display: block;
+        color: $gold;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
 }
