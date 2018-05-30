@@ -20,7 +20,8 @@
     }
 
     .card-list-col  {
-        max-width: 33.33%;
+        flex: 0 0 33.33%;
+        max-width: 33.33%
     }
 
     .js .card-list-col {
@@ -41,9 +42,9 @@
         }
     }
 
-    .card-list-col-5 {
-        max-width: 25%;
-    }
+    // .card-list-col-5 {
+    //     max-width: 25%;
+    // }
 
     .header-aside:last-child {
         display: none;
@@ -118,8 +119,9 @@
         font-size: 3.5vw;
     }
 
-    .card-list-col  {
-        max-width: 50%;
+    .card-list-col {
+        flex: 0 0 50%;
+        max-width: 50%
     }
 
     .js .card-list-col {
@@ -206,8 +208,9 @@
         padding-right: 20px;
     }
 
-    .card-list-col  {
-        max-width: 50%;
+    .card-list-col {
+        flex: 0 0 50%;
+        max-width: 50%
     }
 
     .afisha-row {

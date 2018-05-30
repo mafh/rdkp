@@ -817,7 +817,6 @@ h5,
 }
 
 .unwrap {
-    // margin-left: calc(-370px - (100vw - 1280px) / 2);
     margin-left: calc(-300px);
     margin-right: -300px;
     padding: 0;
@@ -825,6 +824,7 @@ h5,
 }
 
 .page-wrap {
+    overflow: hidden;
 }
 
 .l-header {
@@ -833,10 +833,6 @@ h5,
 }
 
 .index-page-header {
-    // height: 100vh;
-    // height: calc(100vh - 100px);
-    // min-height: 800px;
-    // max-height: 900px;
 
     .header-logo {
         color: $brown;
@@ -998,10 +994,7 @@ h5,
 }
 
 .index-page-header-img {
-    // transition: margin 0.75s ease-out;
     margin-left: calc(100vw/2 - 1280px/2 + 200px);
-    // transition: transform 0.5s ease-out;
-    // transform: translateX(calc(100vw/2 - 1280px/2 + 200px))!important;
 }
 
 .header-gradient {
@@ -1362,17 +1355,11 @@ h5,
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    // background-color: $white;
 }
 
 .card-list-col {
-    flex: 0 0 100%;
+    flex: 0 0 25%;
     max-width: 25%;
-}
-
-.card-list-col-5 {
-    flex: 0 0 100%;
-    max-width: 20%;
 }
 
 .card,
@@ -1614,10 +1601,6 @@ h5,
     img {
         width: 100%;
     }
-}
-
-.index-page-footer {
-    // margin-top: -90px;
 }
 
 .l-footer {
@@ -1889,7 +1872,7 @@ h5,
     section {
         padding-top: 100px;
         padding-bottom: 100px;
-        // border: 2px solid red;
+        position: relative;
 
         &:first-of-type {
             padding-top: 0;
@@ -2302,9 +2285,20 @@ h5,
     font-size: 18px;
 }
 
+.pattern-wave {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    height: 200px;
+    width: 100%;
+    background-image: url('../i/pattern-wave.png');
+}
+
 .pub-list {
     padding-bottom: 50px;
     overflow: hidden;
+    position: relative;
+
 
     h4 {
         @include line;
@@ -2408,7 +2402,6 @@ h5,
             top: 0;
             right: 0;
             z-index: 1;
-            // @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
             @include linear-gradient(to right, rgba(#000, 0) 0%, rgba(#000, 0.3) 50%, rgba(#000, 0.4) 100%);
         }
 
@@ -2440,7 +2433,6 @@ h5,
         max-width: 90%;
         line-height: 1;
         padding-bottom: 50px;
-        // text-shadow: 1px 1px 1px rgba(#000, 0.5);
     }
 
     .promo-slide-link {
@@ -2476,7 +2468,6 @@ h5,
 
 .promo-slider-nav {
     &.swiper-container {
-        // overflow: visible;
     }
 
     .swiper-wrapper {
@@ -2485,7 +2476,6 @@ h5,
 
     .swiper-slide {
         height: 100px;
-        // width: 180px;
         box-sizing: border-box;
         background-color: #000;
         cursor: pointer;
@@ -3090,7 +3080,6 @@ a.developer {
 
     .swiper-slide {
         height: 100px;
-        // width: 180px;
         box-sizing: border-box;
         background-color: #000;
         cursor: pointer;
