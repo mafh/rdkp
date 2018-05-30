@@ -443,11 +443,10 @@ let gallerySliderNav = new Swiper('.js-gallery-slider-nav', {
     centeredSlides: true,
     speed: 1000,
     lazy: true,
-
-    // navigation: {
-    //     nextEl: '.gallery-button-next',
-    //     prevEl: '.gallery-button-prev',
-    // }
+    navigation: {
+        nextEl: '.gallery-button-next',
+        prevEl: '.gallery-button-prev',
+    }
 });
 
 $(function(){

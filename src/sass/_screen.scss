@@ -824,7 +824,7 @@ h5,
 }
 
 .page-wrap {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .l-header {
@@ -1326,6 +1326,7 @@ h5,
 
 .usercontent .afisha-main {
     padding-top: 80px;
+    padding-bottom: 50px;
 }
 
 .afisha-aside {
@@ -1529,6 +1530,16 @@ h5,
     color: $gold;
     word-break: break-word;
 
+    a {
+        color: $gold;
+        transition: color 0.2s;
+        text-decoration: none;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
     &:after {
         content:"";
         display: block;
@@ -1606,6 +1617,32 @@ h5,
 .l-footer {
     background-color: #2e2d2c;
     position: relative;
+}
+
+.f-socials {
+    @include clr;
+
+    a {
+        display: block;
+        height: 32px;
+        width:  50px;
+        position: relative;
+        float: left;
+
+        svg {
+            @include middle;
+            width: 18px;
+            height: 18px;
+            fill: rgba(#fff, 0.25);
+            transition: fill 0.1s;
+        }
+
+        &:hover {
+            svg {
+                fill: rgba(#fff, 0.75);
+            }
+        }
+    }
 }
 
 .footer-wrap {
@@ -1713,6 +1750,16 @@ h5,
     }
 }
 
+.logo-ext {
+    opacity: 0.5;
+    filter: saturate(0);
+    will-change: opacity 0.3s, filter 0.3s;
+
+    &:hover {
+        opacity: 1;
+        filter: saturate(1);
+    }
+}
 
 .b-subscribe-form {
     display: block;
