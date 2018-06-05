@@ -793,3 +793,29 @@ if (select !== null) {
         // },
     });
 }
+
+
+
+window.addEventListener('load', function() {
+
+    var offlineBox = document.querySelector('.offline-status');
+
+    function updateOnlineStatus(event) {
+        var condition = navigator.onLine ? hideOffline() : showOffline();
+    }
+
+    window.addEventListener('online',  updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+
+    function hideOffline() {
+        console.log('y r back to online');
+        offlineBox.classList.remove('is-visible');
+    }
+
+    function showOffline() {
+        console.log('y r offline');
+        offlineBox.classList.add('is-visible');
+    }
+
+    updateOnlineStatus();
+});

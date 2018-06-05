@@ -60,6 +60,7 @@ body {
     font-weight: 300;
     cursor: default;
     background-color: #fff;
+    overflow-x: hidden;
 }
 
 * {
@@ -2523,6 +2524,7 @@ h5,
 
     .swiper-slide {
         height: 100px;
+        width: auto;
         box-sizing: border-box;
         background-color: #000;
         cursor: pointer;
@@ -2539,6 +2541,19 @@ h5,
             background-color: $gold;
             opacity: 0;
             transition: opacity 0.5s;
+        }
+
+        &:before {
+            content:"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 0 4px $yellow;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 1s;
         }
 
         img {
@@ -2565,8 +2580,27 @@ h5,
     }
 
     .swiper-slide-active {
+        cursor: default;
         img {
             opacity: 1;
+            filter: saturate(1);
+        }
+
+        &:before {
+            opacity: 1;
+            transition: opacity 0.5s ease 0.5s;
+        }
+
+        &:hover {
+            &:after {
+                display: none;
+            }
+
+            img {
+                opacity: 1;
+                filter: saturate(1);
+                transition: opacity 0.5s ease 0.5s;
+            }
         }
     }
 }
@@ -2879,7 +2913,7 @@ a.developer {
 
 
 .b-contact {
-    background-color: #999;
+    background-color: #000;
     position: relative;
     min-height: 300px;
     margin-top: 100px;
@@ -2939,6 +2973,7 @@ a.developer {
     left: 0;
     width:  100%;
     height: 100%;
+    opacity: 0.5;
 
     img {
         width:  100%;
@@ -2950,9 +2985,9 @@ a.developer {
 }
 
 .b-contact-gradient {
-    height: 100%;
+    height: 70%;
     width: 100%;
-    max-height: 700px;
+    max-height: 500px;
     position: absolute;
     bottom: 0;
     background-image: url('../i/gradient.png');
@@ -3721,5 +3756,74 @@ a.developer {
         .news-item-title {
             color: $gold;
         }
+    }
+}
+
+
+
+.news-list {
+    padding: 50px 0 100px;
+    overflow: hidden;
+
+    .news-item {
+        &-title {
+            font-size: 24px;
+            color: $darkbrown;
+            font-family: $old;
+            font-weight: 700;
+            padding-bottom: 20px;
+            display: inline-block;
+            line-height: 1.25;
+            transition: color 0.1s;
+        }
+
+        &-date {
+            display: block;
+            color: $gold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            .news-item-title {
+                color: $gold;
+            }
+        }
+    }
+}
+
+.news-list-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left:  -50px;
+    margin-right: -50px;
+}
+
+.news-list-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 25px 50px;
+    box-sizing: border-box;
+}
+
+.offline-status {
+    position: fixed;
+    width: 100%;
+    width: calc(100% - 20px);
+    background-color: #b92f2f;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    box-shadow: 0 0 0 5px rgba(#b92f2f, 0.1);
+    display: none;
+
+    &.is-visible {
+        display: block;
     }
 }
